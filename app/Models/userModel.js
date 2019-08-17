@@ -1,3 +1,6 @@
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema({
@@ -25,10 +28,13 @@ const Schema = mongoose.Schema({
 
 var user = mongoose.model('user', Schema);
 
-module.exports = {
-    create(createData, callback) {
+module.exports =
+{
+    register(createData, callback)
+    {
         console.log('in create data', createData);
-        var userDetails = new user ({
+        var registerDetails = new user (
+        {
             "firstname": createData.firstname,
             "lastname": createData.lastname,
             "mobileno": createData.mobileno,
@@ -36,12 +42,55 @@ module.exports = {
             "password": createData.password
         })
 
-        userDetails.save((err, data) => {
-            if (err) {
+        registerDetails.save((err, data) =>
+        {
+            if(err)
+            {
                 return callback(err);
-            } else {
+            }
+            else
+            {
                 return callback(null, { message: 'registered successfully', data });
             }
-        })
+        });
+    },
+
+    login(loginData, callback)
+    {
+        console.log(loginData.emailid)
+        user.findOne({'emailid': loginData.emailid}, (err, data) =>
+        {
+            if(err)
+            {
+                return callback(err);
+            }
+            else
+            {
+                bcrypt.hash(loginData.password, saltRounds, function(err,hash)
+                {
+                });
+
+                    bcrypt.compare(myPlaintextPassword, hash, function(err, res)
+                    {
+                        // res == true
+                    });
+                    bcrypt.compare(someOtherPlaintextPassword, hash, function(err, res)
+                    {
+                        // res == false
+                    });
+                console.log(loginData.password)
+                console.log(data.password)
+                if(loginData.password === data.password)
+                {
+                    console.log('Successfully loged in');
+                    return callback(null, {message: 'Successfully loged in' ,data});
+                }
+                else
+                {
+                    console.log("Please enter valid password.");
+                    return callback({message: 'Please enter valid password.' , err});
+                }
+            }
+        });
     }
 }

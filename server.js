@@ -7,7 +7,8 @@ var app = express();
 
 var bodyParser = require("body-parser");
 var route = require('./Routes/routes');
-//Create express app
+
+//Create express app 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
