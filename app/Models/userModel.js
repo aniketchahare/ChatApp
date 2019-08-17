@@ -68,28 +68,30 @@ module.exports =
             {
                 bcrypt.hash(loginData.password, saltRounds, function(err,hash)
                 {
+                    password : loginData.password
                 });
 
-                    bcrypt.compare(myPlaintextPassword, hash, function(err, res)
-                    {
-                        // res == true
-                    });
-                    bcrypt.compare(someOtherPlaintextPassword, hash, function(err, res)
-                    {
-                        // res == false
-                    });
-                console.log(loginData.password)
-                console.log(data.password)
-                if(loginData.password === data.password)
+                bcrypt.compare(loginData.password, hash, function(err, res)
                 {
-                    console.log('Successfully loged in');
-                    return callback(null, {message: 'Successfully loged in' ,data});
-                }
-                else
-                {
-                    console.log("Please enter valid password.");
-                    return callback({message: 'Please enter valid password.' , err});
-                }
+                    if(res)
+                    {
+                        return callback(null, {message: "Successfully loged in.", data})
+                    }
+                    else
+                    {
+                        return callback({message: "please enter valid password.", err})
+                    }
+                });
+                // console.log(loginData.password)
+                // console.log(data.password)
+                // if(loginData.password === data.password)
+                // {
+                //     return callback(null, {message: 'Successfully loged in' ,data});
+                // }
+                // else
+                // {
+                //     return callback({message: 'Please enter valid password.' , err});
+                // }
             }
         });
     }
