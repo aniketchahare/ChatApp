@@ -1,0 +1,41 @@
+let jwt = require('jsonwebtoken');
+const secretKey = "secretKey"
+
+module.exports =
+{
+    checkToken(req,res,next)
+    {
+        let token = req.header('token') || req.param.token;
+
+        console.log('token in check token',token)
+        if(token)
+        {
+            jwt.verify(token, secretKey, (err,data) =>
+            {
+                if(err)
+                {
+                    return res.json(
+                    {
+                        success: false,
+                        message: 'Token is invalid.'
+                    });
+                }
+                else
+                {
+                    console.log(data)
+                    req.decoded = data;
+                    console.log('Decoded token--> '+req.decoded)
+                    next();
+                }
+            });
+        }
+        else
+        {
+            return res.json(
+            {
+                success: false,
+                message: 'Unauthorised User.'
+            });
+        }
+    }
+}

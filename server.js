@@ -5,13 +5,15 @@ require("./config/database");
 var express = require("express");
 var app = express();
 
+var expressValidator = require('express-validator');
+
 var bodyParser = require("body-parser");
 var route = require('./Routes/routes');
 
 //Create express app 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(expressValidator());
 //Define a simple route
 app.use('/',route);
 app.get('/', (req, res) => {

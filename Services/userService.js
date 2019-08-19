@@ -23,12 +23,42 @@ module.exports =
         {
             if(err)
             {
-                return callback(err)
+                return callback(err);
             }
             else
             {
                 return callback(null, data);
             }
-        })
+        });
+    },
+
+    forgotPasswordService(forgotPasswordData, callback)
+    {
+        userModel.forgotPassword(forgotPasswordData, (err, data) =>
+        {
+            if(err)
+            {
+                return callback(err);
+            }
+            else
+            {
+                return callback(null, data);
+            }
+        });
+    },
+
+    resetPasswordService(resetPasswordData, callback)
+    {
+        userModel.resetPassword(resetPasswordData, (err, data) =>
+        {
+            if(err)
+            {
+                return callback(err);
+            }
+            else
+            {
+                return callback(null, data);
+            }
+        });
     }
 }

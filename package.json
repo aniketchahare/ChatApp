@@ -1,13 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-validator": "^4.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.9",
     "nodemon": "^1.19.1"
@@ -18,5 +18,14 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aniketchahare/ChatApplication.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aniketchahare/ChatApplication/issues"
+  },
+  "homepage": "https://github.com/aniketchahare/ChatApplication#readme",
+  "description": ""
 }
