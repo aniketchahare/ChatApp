@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to chat app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="../css/registration.css" type="text/css">
+</head>
+<body style="background-color:darkgray">
+    <h2 class="h2"><b>Welcome To Chat App</b></h2>
+    <div ng-app = "ChatApp" class="form-fields">
+        <h3 class="h3"><b>Registration</b></h3>
+
+        <div>
+            <div class="label">
+                <label for="firstname">First name:  </label><br>
+            </div>
+                <input type="text" id="lastname" class="text-field" placeholder="Enter first name " ng-model="newcontact.firstname">
+        </div>
+        <div>
+            <div class="label">
+                <label for="lastname">Last name:  </label><br>
+            </div>
+                <input type="text" id="lastname" class="text-field" placeholder="Enter last name " ng-model="newcontact.lastname">
+        </div>
+        <div>
+            <div class="label">
+                <label for="mobileno">Mobile number:  </label><br>
+            </div>
+                <input type="text" id="mobileno" class="text-field" placeholder="Enter mobile number" ng-model="newcontact.mobileno">
+        </div>
+        <div>
+            <div class="label">
+                <lable for="emailid">Email Id:  </lable><br>
+            </div>
+                <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="newcontact.emailid">
+        </div>
+        <div>
+            <div class="label">
+                <label for="password">Password:  </label><br>
+            </div>
+                <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="newcontact.password">
+        </div>
+        <div class="forgot-button">
+            <div class="login">
+                <a href="">log in? </a>
+            </div>
+            <input type="button" class="button" value="Register"><br>
+        </div>
+    </div>
+</body>
+</html>

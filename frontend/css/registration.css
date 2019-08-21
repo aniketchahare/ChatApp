@@ -1,0 +1,49 @@
+.form-fields
+{
+    padding-top: 0px;
+    text-align: center;
+    margin-left: 50px;
+    border-width: 100px;
+    margin-right: 110px;
+}
+
+.h2
+{
+    padding-left: 374px;
+    font-size: 50px;
+}
+
+.h3
+{
+    font-size: 45px;
+}
+
+.text-field
+{
+    text-align: left;
+    padding: 8px;
+    margin: 10px;
+    width: 320px;
+}
+
+.label
+{
+    font-size: 16px;
+    padding-left: 36%;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.login
+{
+    font-size: 15px;
+    padding-right: 276px;
+}
+
+.button
+{
+    bottom: 68px;
+    left: 720px;
+    position: absolute;
+    font-size: 15px;
+}

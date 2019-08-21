@@ -1,0 +1,41 @@
+.login-fields
+{
+    padding-top: 60px;
+    text-align: center;
+    margin-left: 50px;
+    border-width: 100px;
+    margin-right: 110px;
+}
+
+.h3
+{
+    font-size: 38px;
+}
+
+.text-field
+{
+    text-align: left;
+    padding: 8px;
+    margin: 10px;
+    width: 320px;
+}
+
+.label
+{
+    font-size: 16px;
+    padding-left: 36%;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.register
+{
+    padding-right: 270px;
+}
+
+.button
+{
+    bottom: 280px;
+    left: 735px;
+    font-size: 15px;
+}
