@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="chatApplication">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+        <script src="app.js"></script>
+
+        <script src="controller/registerController.js"></script>
+        <script src="controller/loginController.js"></script>
+        <script src="controller/forgotController.js"></script>
+        <script src="controller/resetController.js"></script>
+
+        <script src="services/registerServices.js"></script>
+        <script src="services/loginServices.js"></script>
+        <script src="services/forgotServices.js"></script>
+        <script src="services/resetServices.js"></script>
+    </head>
+    <body>
+        <div>
+            <ui-view>
+
+            </ui-view>
+        </div>
+    </body>
+</html>

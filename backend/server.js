@@ -6,14 +6,18 @@ var express = require("express");
 //express app is use to starts a server and listen on port for connection
 var app = express();
 
+var cors = require('cors');
+
 var expressValidator = require('express-validator');
 
 var bodyParser = require("body-parser");
 var route = require('./routes/routes');
 
+app.use(express.static('../frontend'));
 //Create express app 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 app.use(expressValidator());
 //Define a simple route
 app.use('/',route);
