@@ -4,6 +4,7 @@
     <title>ChatApp reset</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../css//reset.css" type="text/css">
+    <script src="../controller/resetController.js"></script>
 </head>
 <body style="background-color:darkgray">
     <div ng-app = "ChatApp" class="login-fields">
@@ -16,7 +17,7 @@
                 <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="registercontact.password">
         </div>
         <div class="button">
-            <input type="button" value="Save">
+            <button ui-sref="save" ng-click="save()">Save</button><br>
         </div>
     </div>
 </body>

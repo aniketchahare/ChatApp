@@ -4,6 +4,7 @@
     <title>ChatApp login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../css/login.css" type="text/css">
+    <script src="../controller/loginController.js"></script>
 </head>
 <body style="background-color:darkgray">
     <div ng-app = "ChatApp" class="login-fields">
@@ -23,7 +24,7 @@
         </div>
         <div class="forgot-link">
             <a href="">forgot password? </a>
-            <input type="button" class="button" value="Log in">
+            <button ui-sref="login" ng-click="login()" class="button">Log in</button><br>
         </div>
         <div class="account">
             <a href="">create account? </a>

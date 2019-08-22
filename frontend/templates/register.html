@@ -1,50 +1,52 @@
-<html>
+<html">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to chat app</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../css/register.css" type="text/css">
+    <script src="/frontend/controller/registerController.js"></script>
 </head>
-<body style="background-color:darkgray">
+<body class="body" ng-app = "chatApplication" ng-controller="registerController">
     <h2 class="h2"><b>Welcome To Chat App</b></h2>
-    <div ng-app = "ChatApp" class="form-fields">
+    <div class="form-fields">
         <h3 class="h3"><b>Registration</b></h3>
 
         <div>
             <div class="label">
                 <label for="firstname">First name:  </label><br>
             </div>
-                <input type="text" id="lastname" class="text-field" placeholder="Enter first name " ng-model="newcontact.firstname">
+                <input type="text" class="text-field" placeholder="Enter first name " ng-model="firstname">
         </div>
         <div>
             <div class="label">
                 <label for="lastname">Last name:  </label><br>
             </div>
-                <input type="text" id="lastname" class="text-field" placeholder="Enter last name " ng-model="newcontact.lastname">
+                <input type="text" class="text-field" placeholder="Enter last name " ng-model="lastname">
         </div>
         <div>
             <div class="label">
                 <label for="mobileno">Mobile number:  </label><br>
             </div>
-                <input type="text" id="mobileno" class="text-field" placeholder="Enter mobile number" ng-model="newcontact.mobileno">
+                <input type="text" class="text-field" placeholder="Enter mobile number" ng-model="mobileno">
         </div>
         <div>
             <div class="label">
                 <lable for="emailid">Email Id:  </lable><br>
             </div>
-                <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="newcontact.emailid">
+                <input type="email" class="text-field" placeholder="Enter emailid" ng-model="emailid">
         </div>
         <div>
             <div class="label">
                 <label for="password">Password:  </label><br>
             </div>
-                <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="newcontact.password">
+                <input type="password" class="text-field" placeholder="Enter password" ng-model="password">
         </div>
         <div class="forgot-button">
             <div class="login">
-                <a href="">log in? </a>
+                <a href="/#/login">log in? </a>
             </div>
-            <input type="button" class="button" value="Register"><br>
+            <button ui-sref="register" ng-click="register()" class="button">Register</button><br>
         </div>
     </div>
 </body>

@@ -17,8 +17,9 @@ app.use(express.static('../frontend'));
 //Create express app 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 app.use(expressValidator());
+
+app.use(cors());
 //Define a simple route
 app.use('/',route);
 app.get('/', (req, res) => {

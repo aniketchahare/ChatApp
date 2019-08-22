@@ -60,37 +60,58 @@ module.exports =
                 "password": hash(createData.password),
             })
 
-            user.findOne({ 'emailid': registerDetails.emailid }, (err,existData) =>
+            registerDetails.save((err, data) => 
             {
-                console.log(existData)
-                if(!existData)
+                if (err)
                 {
-                    return res.status(400).send({ msg: 'Email address is not exist.'});
+                    return callback(err);
                 }
                 else
                 {
-                    registerDetails.save((err, data) => 
-                    {
-                        if (err)
-                        {
-                            return callback(err);
-                        }
-                        else
-                        {
-                            // var payload =
-                            // {
-                            //     'emailid': createData.emailid
-                            // }
+                    // var payload =
+                    // {
+                    //     'emailid': createData.emailid
+                    // }
 
-                            // var token = tokenGeneration.tokenGeneration(payload);
+                    // var token = tokenGeneration.tokenGeneration(payload);
 
-                            // token.
+                    // token.
 
-                            return callback(null, { message: 'registered successfully', data });
-                        }
-                    });
+                    return callback(null, { message: 'registered successfully', data });
                 }
             });
+
+            // user.findOne({ 'emailid': registerDetails.emailid }, (err,existData) =>
+            // {
+            //     console.log(existData)
+            //     if(!existData)
+            //     {
+            //         return res.status(400).send({ msg: 'Email address is not exist.'});
+            //     }
+            //     else
+            //     {
+            //         registerDetails.save((err, data) => 
+            //         {
+            //             if (err)
+            //             {
+            //                 return callback(err);
+            //             }
+            //             else
+            //             {
+            //                 // var payload =
+            //                 // {
+            //                 //     'emailid': createData.emailid
+            //                 // }
+
+            //                 // var token = tokenGeneration.tokenGeneration(payload);
+
+            //                 // token.
+
+            //                 return callback(null, { message: 'registered successfully', data });
+            //             }
+            //         });
+            //     }
+            // });
         }
         catch(err)
         {

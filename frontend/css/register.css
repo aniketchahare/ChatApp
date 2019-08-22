@@ -1,5 +1,11 @@
+.ng-scope
+{
+    background-color: darkgray;
+}
+
 .form-fields
 {
+    background-color: darkgray;
     padding-top: 0px;
     text-align: center;
     margin-left: 50px;
@@ -42,7 +48,7 @@
 
 .button
 {
-    bottom: 68px;
+    bottom: 70px;
     left: 720px;
     position: absolute;
     font-size: 15px;

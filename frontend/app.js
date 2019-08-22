@@ -1,22 +1,34 @@
-// var chatApplication = angular.module('chatApplication', ['ui.router']);
-// chatApplication.config(function ($stateProvider, $urlRouterProvider) {
+var app = angular.module('chatApplication', ['ui.router']);
 
-//     $stateProvider
-//     .state('register', {
-//         url: '/register',
-//         templateUrl: 'template/register.html',
-//         controller: 'controlRegister'
-//     })
-// })
-
-var chatApplication = angular.module('chatApplication',['ui.router']);
-
-chatApplication.config(function($stateProvider,$urlRouterProvider)
-{
+app.config(function ($stateProvider, $urlRouterProvider) {
+    console.log("welcome")
     $stateProvider.state('register',
-    {
-        url: '/register',
-        templateUrl: 'template/register.html',
-        controller: 'registerController'
-    });
+        {
+            url: '/register',
+            templateUrl: 'templates/register.html',
+            controller: 'registerController'
+        });
+
+    $stateProvider.state('login',
+        {
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'loginController'
+        });
+
+    $stateProvider.state('forgot',
+        {
+            url: '/forgot',
+            templateUrl: 'templates/forgot.html',
+            controller: 'forgotController'
+        });
+
+    $stateProvider.state('reset',
+        {
+            url: '/reset',
+            templateUrl: 'templates/reset.html',
+            controller: 'resetController'
+        });
+
+    $urlRouterProvider.otherwise('/login');
 });
