@@ -8,6 +8,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/register.html',
             controller: 'registerController'
         });
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider.state('login',
         {
@@ -15,6 +16,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/login.html',
             controller: 'loginController'
         });
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider.state('forgot',
         {
@@ -22,6 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/forgot.html',
             controller: 'forgotController'
         });
+    $urlRouterProvider.otherwise('/reset');
 
     $stateProvider.state('reset',
         {
@@ -29,6 +32,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/reset.html',
             controller: 'resetController'
         });
-
     $urlRouterProvider.otherwise('/login');
 });

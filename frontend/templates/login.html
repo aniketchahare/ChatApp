@@ -14,20 +14,20 @@
             <div class="label">
                 <lable for="emailid">Email Id:  </lable><br>
             </div>
-                <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="registercontact.emailid">
+                <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="emailid">
         </div>
         <div>
             <div class="label">
                 <label for="password">Password:  </label><br>
             </div>
-                <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="registercontact.password">
+                <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="password">
         </div>
         <div class="forgot-link">
-            <a href="">forgot password? </a>
+            <a href="/#/forgot">forgot password? </a>
             <button ui-sref="login" ng-click="login()" class="button">Log in</button><br>
         </div>
         <div class="account">
-            <a href="">create account? </a>
+            <a href="/#/register">create account? </a>
         </div>
     </div>
 </body>

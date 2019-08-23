@@ -13,4 +13,5 @@ routes.post('/forgot', userCtrl.forgotPasswordController);
 //reset password api
 routes.post('/reset/:token',  tokenVerification.checkToken, userCtrl.resetPasswordController);
 
+
 module.exports = routes;

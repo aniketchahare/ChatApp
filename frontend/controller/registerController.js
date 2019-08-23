@@ -1,9 +1,7 @@
-app.controller("registerController", function($scope,registerServices)
-{
+app.controller("registerController", function ($scope, registerServices) {
     console.log("register controller called...");
 
-    $scope.register = function()
-    {
+    $scope.register = function () {
         var registerUser =
         {
             'firstname': $scope.firstname,
@@ -13,7 +11,7 @@ app.controller("registerController", function($scope,registerServices)
             'password': $scope.password
         }
 
-        console.log("register details in controller--> ",registerUser);
+        console.log("register details in controller--> ", registerUser);
         registerServices.registerServicesUser(registerUser);
     }
 });

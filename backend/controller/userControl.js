@@ -183,13 +183,14 @@ module.exports =
             }
             else
             {
+                console.log(req.body)
                 var resetPasswordDetails =
                 {
-                    _id : req.decoded._id,
+                    _id : req.body['data'].id,
                     password : req.body.password,
                 }
 
-                console.log(resetPasswordDetails);
+                console.log("inside reset control",resetPasswordDetails);
 
                 userService.resetPasswordService(resetPasswordDetails, (err,data) =>
                 {

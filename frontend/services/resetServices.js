@@ -5,15 +5,15 @@ app.service("resetServices", function($http,$location)
         $http(
         {
             method: 'POST',
-            url: 'http://localhost:3000/reset',
+            url: 'http://localhost:3000/#/reset/:token',
             data: data
         }).then(
-            function resetSuccessfully(res)
+            function (response)
             {
                 console.log("reset successfully");
                 console.log(response);
 
-                $location.path('/reset');
+                $location.path('/#/login');
             }).catch(function error(error)
             {
                 console.log("reset failed..",error)

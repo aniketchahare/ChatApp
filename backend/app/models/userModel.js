@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const nodeMailer = require("nodemailer");
+const nodeMailer = require('../../utilityClass/utilityNodeMailer');
 
 // const tokenVerification = require('../../middleware/tokenVerification');
 
@@ -178,6 +178,7 @@ module.exports =
                 {
                     var payload =
                     {
+                        "_id": data._id,
                         "emailid": forgotPasswordData.emailid,
                     }
 
@@ -187,6 +188,8 @@ module.exports =
 
                     var url = 'http://localhost:3000/reset/' + token.token;
                     console.log(url)
+
+                    nodeMailer.sendEmail(forgotPasswordData.emailid,url);
 
                     return callback(null, { message: 'reset passsword link has been sent to your email id', data, url : url});
                 }

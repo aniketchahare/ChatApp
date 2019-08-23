@@ -8,12 +8,12 @@ app.service("forgotServices", function($http,$location)
             url: 'http://localhost:3000/forgot',
             data: data
         }).then(
-            function forgotSuccessfully(res)
+            function (response)
             {
                 console.log("forgot successfully");
                 console.log(response);
 
-                $location.path('/forgot');
+                $location.path('/#/forgot');
             }).catch(function error(error)
             {
                 console.log("forgot failed..",error)

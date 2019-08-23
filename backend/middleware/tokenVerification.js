@@ -25,8 +25,8 @@ module.exports =
                     else
                     {
                         console.log(data)
-                        req.decoded = data;
-                        console.log('Decoded token--> '+req.decoded)
+                        req.body['data'] = data;
+                        console.log('Decoded token--> '+req.body['data'])
                         next();
                     }
                 });

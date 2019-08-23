@@ -1,15 +1,13 @@
-app.controller("forgotController", function($scope,forgotServices)
-{
+app.controller("forgotController", function ($scope, forgotServices) {
     console.log("forgot controller called...");
 
-    $scope.continue = function()
-    {
+    $scope.continue = function () {
         var forgotUser =
         {
-            'emailid': $scope.emailid,
+            'emailid': $scope.emailid
         }
 
-        console.log("forgot details in controller--> ",forgotUser);
-        forgotServices.forgotServicesUser(forgotUser,$scope);
+        console.log("forgot details in controller--> ", forgotUser);
+        forgotServices.forgotServicesUser(forgotUser, $scope);
     }
 });
