@@ -2,7 +2,7 @@ var nodeMailer = require('nodemailer');
 
 module.exports =
 {
-    sendEmail(emailid, url)
+    sendEmail(emailid, token)
     {
         console.log('in side node mailer');
         const smtpTransporter = nodeMailer.createTransport(
@@ -20,7 +20,9 @@ module.exports =
             from: 'userdummy1304@gmail.com',
             to: emailid,
             subject: "reset password",
-            text: url,
+            // html: '<p>click here <a href="http://localhost:3000/#/reset/' + token + '"></a></p>'
+            html: '<p>Click <a href="http://localhost:3000/#/reset/:'+token+'">here</a> to reset your password</p>'
+            // html: 
         };
 
         smtpTransporter.sendMail(mailOptions, (err, response) => 

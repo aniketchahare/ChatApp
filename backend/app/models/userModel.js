@@ -186,10 +186,10 @@ module.exports =
 
                     console.log("token gen in forgot--> ",token.token)
 
-                    var url = 'http://localhost:3000/reset/' + token.token;
+                    var url = 'http://localhost:3000/#/reset/' + token.token;
                     console.log(url)
 
-                    nodeMailer.sendEmail(forgotPasswordData.emailid,url);
+                    nodeMailer.sendEmail(forgotPasswordData.emailid,token.token);
 
                     return callback(null, { message: 'reset passsword link has been sent to your email id', data, url : url});
                 }
@@ -216,6 +216,30 @@ module.exports =
                 {
                     console.log('data-->', data)
                     return callback(null, { message: 'Password set successfully.',data});
+                }
+            });
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    },
+
+    getAllUser(callback)
+    {
+        try
+        {
+            user.find({}, (err,data) =>
+            {
+                if(err)
+                {
+                    return callback({message : 'there is some error',err})
+                }
+                else
+                {
+                    console.log("data in model ",data)
+                    return callback(null,{message : 'List of users...',data});
                 }
             });
         }

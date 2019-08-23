@@ -92,5 +92,28 @@ module.exports =
             console.log(err);
             return err;
         }
+    },
+
+    getAllUserService(callback)
+    {
+        try
+        {
+            userModel.getAllUser((err, data) =>
+            {
+                if(err)
+                {
+                    return callback(err);
+                }
+                else
+                {
+                    return callback(null, data);
+                }
+            });
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
     }
 }

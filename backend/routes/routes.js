@@ -3,6 +3,7 @@ var routes = express.Router();
 
 var tokenVerification = require('../middleware/tokenVerification');
 var userCtrl = require('../controller/userControl');
+var chatCtrl = require('../controller/chatControl');
 
 //registration api
 routes.post('/register', userCtrl.registerController);
@@ -13,5 +14,11 @@ routes.post('/forgot', userCtrl.forgotPasswordController);
 //reset password api
 routes.post('/reset/:token',  tokenVerification.checkToken, userCtrl.resetPasswordController);
 
+//get all users api
+routes.get('/getAllUsers', userCtrl.getAllUserController);
+//chat message api
+routes.post('/addMsg', chatCtrl.chatController);
+//get all chat api
+routes.get('/getAllChat', chatCtrl.getAllChatController);
 
 module.exports = routes;

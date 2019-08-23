@@ -183,10 +183,10 @@ module.exports =
             }
             else
             {
-                console.log(req.body)
+                console.log("in controller",req.body.data._id);
                 var resetPasswordDetails =
                 {
-                    _id : req.body['data'].id,
+                    _id : req.body.data._id,
                     password : req.body.password,
                 }
 
@@ -208,6 +208,35 @@ module.exports =
                     }
                 });
             }
+        }
+        catch(err)
+        {
+            console.log(err);
+            return err;
+        }
+    },
+
+    getAllUserController(req,res)
+    {
+        try
+        {
+            var response = {};
+            
+            userService.getAllUserService((err, data) => 
+            {
+                if(err)
+                {
+                    response.success = false;
+                    response.error = err;
+                    return res.status(400).send(response);
+                }
+                else
+                {
+                    response.success = true;
+                    response.result = data;
+                    return res.status(200).send(response);
+                }
+            });
         }
         catch(err)
         {
