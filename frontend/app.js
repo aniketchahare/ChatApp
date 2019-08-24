@@ -28,9 +28,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('reset',
         {
-            url: '/reset',
+            url: '/reset/:token',
             templateUrl: 'templates/reset.html',
             controller: 'resetController'
         });
     $urlRouterProvider.otherwise('/login');
 });
+
+// app.service('SocketService', ['socketFactory', function SocketService(socketFactory)
+// {
+//     return socketFactory(
+//     {
+//         ioSocket: io.connect('http://localhost:3000')
+//     });
+// }]);

@@ -1,11 +1,6 @@
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChatApp forgot</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="../css/forgot.css" type="text/css">
-    <script src="../controller/forgotController.js"></script>
 </head>
 <body style="background-color:darkgray" ng-app = "chatApplication" ng-controller="forgotController">
     <div class="login-fields">
@@ -17,8 +12,8 @@
             </div>
                 <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="emailid">
         </div>
-        <div class="button">
-            <button ui-sref="continue" ng-click="continue()" class="button">Continue</button><br>
+        <div class="buttonforgot">
+            <button ui-sref="continue" ng-click="continue()">Continue</button><br>
         </div>
     </div>
 </body>

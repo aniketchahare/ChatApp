@@ -25,6 +25,14 @@
     width: 320px;
 }
 
+.text-fieldreset
+{
+    text-align: left;
+    padding: 8px;
+    margin: 10px;
+    width: 320px;
+}
+
 .label
 {
     font-size: 16px;
@@ -33,9 +41,24 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-.button
+.buttonregister
 {
-    top: 264px;
+    left: 726px;
+    position: absolute;
+    bottom: 14%
+}
+
+.buttonreset
+{
+    bottom: 380px;
     left: 610px;
     position: absolute;
+    font-size: 15px;
+}
+
+.buttonforgot
+{
+    bottom: 280px;
+    left: 735px;
+    font-size: 15px;
 }

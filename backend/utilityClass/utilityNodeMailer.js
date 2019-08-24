@@ -21,8 +21,7 @@ module.exports =
             to: emailid,
             subject: "reset password",
             // html: '<p>click here <a href="http://localhost:3000/#/reset/' + token + '"></a></p>'
-            html: '<p>Click <a href="http://localhost:3000/#/reset/:'+token+'">here</a> to reset your password</p>'
-            // html: 
+            html: '<p>Click <a href="http://localhost:3000/#/reset/'+token+'">here</a> to reset your password</p>'
         };
 
         smtpTransporter.sendMail(mailOptions, (err, response) => 

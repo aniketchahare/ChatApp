@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat App</title>
+    </head>
+    <link rel="stylesheet" href="../css/chatBox.css" type="text/css">
+    <body>
+    <div id="page">
+        <div id="header">
+            Chat Box
+            <button ui-sref="logout" ng-click="logout()" class="buttonlogout">log out</button>
+        </div>
+        <div id="menu">
+            Users
+        </div>
+        <div id="content"></div>
+        <div>
+            <form class="form-field">
+                <div class="row">
+                    <div class="column">
+                            <textarea placeholder="Start conversation.." name="msg" required></textarea>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="buttonsend">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

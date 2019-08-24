@@ -1,10 +1,6 @@
 <html>
 <head>
-    <meta charset="utf-8">
     <title>ChatApp reset</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="../css//reset.css" type="text/css">
-    <script src="../controller/resetController.js"></script>
 </head>
 <body style="background-color:darkgray" ng-controller="resetController">
     <div ng-app = "ChatApp" class="login-fields">
@@ -14,9 +10,9 @@
             <div class="label">
                 <label for="password">Password:  </label><br>
             </div>
-                <input type="password" id="password" class="text-field" placeholder="Enter password" ng-model="password">
+                <input type="password" id="password" class="text-fieldreset" placeholder="Enter password" ng-model="password">
         </div>
-        <div class="button">
+        <div class="buttonreset">
             <button ui-sref="save" ng-click="save()">Save</button><br>
         </div>
     </div>
