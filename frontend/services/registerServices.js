@@ -1,5 +1,5 @@
 app.service("registerServices", function ($http, $location) {
-    this.registerServicesUser = function (data) {
+    this.registerServicesUser = function (data, $scope) {
         $http(
             {
                 method: 'POST',
@@ -10,9 +10,15 @@ app.service("registerServices", function ($http, $location) {
                     console.log("registration successfully");
                     console.log(response);
 
+                    $scope.register = function () {
+                        alert("Registration done Successfully...")
+                    }
                     $location.path('/#/register');
                     $location.path('/#/login');
                 }).catch(function (error) {
+                    $scope.register = function () {
+                        alert("Registration failed...")
+                    }
                     console.log("Registration failed..", error)
                 });
     }

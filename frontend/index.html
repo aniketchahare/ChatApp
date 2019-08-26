@@ -1,34 +1,49 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
-        <script src="./app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="controller/registerController.js"></script>
-        <script src="controller/loginController.js"></script>
-        <script src="controller/forgotController.js"></script>
-        <script src="controller/resetController.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.20/angular-material.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.20/angular-material.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-socket-io/0.7.0/socket.min.js"></script>
 
-        <script src="services/registerServices.js"></script>
-        <script src="services/loginServices.js"></script>
-        <script src="services/forgotServices.js"></script>
-        <script src="services/resetServices.js"></script>
+    <script src="./app.js"></script>
 
-        <link rel="stylesheet" href="../css/register.css" type="text/css">
-        <link rel="stylesheet" href="../css/login.css" type="text/css">
-        <link rel="stylesheet" href="../css/forgot.css" type="text/css">
-        <link rel="stylesheet" href="../css//reset.css" type="text/css">
-    </head>
-    <body ng-app="chatApplication">
-        <div>
-            <ui-view>
+    <script src="controller/registerController.js"></script>
+    <script src="controller/loginController.js"></script>
+    <script src="controller/forgotController.js"></script>
+    <script src="controller/resetController.js"></script>
+    <script src="controller/chatController.js"></script>
 
-            </ui-view>
-        </div>
-    </body>
+    <script src="services/registerServices.js"></script>
+    <script src="services/loginServices.js"></script>
+    <script src="services/forgotServices.js"></script>
+    <script src="services/resetServices.js"></script>
+    <script src="services/chatServices.js"></script>
+
+    <link rel="stylesheet" href="../css/register.css" type="text/css">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">
+    <link rel="stylesheet" href="../css/forgot.css" type="text/css">
+    <link rel="stylesheet" href="../css//reset.css" type="text/css">
+
+    <script src="./node_modules/angular-socket-io/socket.js"></script>
+
+    <script>
+        var socket = io();
+    </script>
+</head>
+
+<body ng-app="chatApplication">
+    <div>
+        <ui-view>
+
+        </ui-view>
+    </div>
+</body>
+
 </html>

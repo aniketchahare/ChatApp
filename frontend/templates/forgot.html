@@ -1,20 +1,23 @@
 <html>
+
 <head>
     <title>ChatApp forgot</title>
 </head>
-<body style="background-color:darkgray" ng-app = "chatApplication" ng-controller="forgotController">
+
+<body style="background-color:darkgray" ng-app="chatApplication" ng-controller="forgotController">
     <div class="login-fields">
         <h3 class="h3"><b>Forgot password</b></h3>
 
         <div>
             <div class="label">
-                <lable for="emailid">Email Id:  </lable><br>
+                <lable for="emailid">Email Id: </lable><br>
             </div>
-                <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="emailid">
+            <input type="email" id="emailid" class="text-field" placeholder="Enter emailid" ng-model="emailid">
         </div>
         <div class="buttonforgot">
             <button ui-sref="continue" ng-click="continue()">Continue</button><br>
         </div>
     </div>
 </body>
+
 </html>

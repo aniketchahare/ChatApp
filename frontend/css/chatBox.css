@@ -5,9 +5,9 @@ div#page
     margin:0 auto;
     padding:5px;
     text-align:left;
-    position:relative;
+    position:absolute;
     background-color: darkgray;
-    
+    padding-bottom: 8%;
 }
 
 div
@@ -42,7 +42,7 @@ div#content
 {
     border:1px solid blue;
     width:1018px;
-    margin:10px 0 10px 268px;
+    margin:-32px 0 10px 268px;
     min-height:500px;
     height:500px
 }

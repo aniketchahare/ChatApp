@@ -1,20 +1,24 @@
 <html>
+
 <head>
     <title>ChatApp reset</title>
 </head>
+
 <body style="background-color:darkgray" ng-controller="resetController">
-    <div ng-app = "ChatApp" class="login-fields">
+    <div ng-app="ChatApp" class="login-fields">
         <h3 class="h3"><b>Reset password</b></h3>
 
         <div>
             <div class="label">
-                <label for="password">Password:  </label><br>
+                <label for="password">Password: </label><br>
             </div>
-                <input type="password" id="password" class="text-fieldreset" placeholder="Enter password" ng-model="password">
+            <input type="password" id="password" class="text-fieldreset" placeholder="Enter password"
+                ng-model="password">
         </div>
         <div class="buttonreset">
             <button ui-sref="save" ng-click="save()">Save</button><br>
         </div>
     </div>
 </body>
+
 </html>
