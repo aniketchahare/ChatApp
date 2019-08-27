@@ -1,4 +1,4 @@
-app.controller("chatController", function ($scope, SocketService, $state, $location, chatService) {
+app.controller("chatController", function($scope, SocketService, $state, $location, chatService) {
     console.log("chat controller called...");
 
 
@@ -10,6 +10,7 @@ app.controller("chatController", function ($scope, SocketService, $state, $locat
     $scope.lastname = localStorage.getItem('lastname');
     $scope.mobileno = localStorage.getItem('mobileno');
     $scope.emailid = localStorage.getItem('emailid');
+    $scope.password = localStorage.getItem('password');
     $scope.token = localStorage.getItem('token')
     console.log(" token ======= ", $scope.token);
 
@@ -25,20 +26,24 @@ app.controller("chatController", function ($scope, SocketService, $state, $locat
     //     console.log("error in searching messages....")
     // }
 
-    $scope.allUser = function () {
+    $scope.allUser = function() {
         // console.log("get all users token inside " + token);
         chatService.allUser($scope);
         // chatServices.
     }
     $scope.allUser();
 
+    $scope.person = function(receiver) {
+        console.log("user--> ",receiver,"emailid of sender",$scope.emailid);
+        chatService.person($scope.emailid, receiver);
+    }
+
     try {
-        $scope.logout = function () {
+        $scope.logout = function() {
             localStorage.clear();
             $location.path('/login')
         }
-    }
-    catch (err) {
+    } catch (err) {
         console.log("error in logging out")
     }
-});
+})

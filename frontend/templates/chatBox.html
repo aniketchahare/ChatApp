@@ -12,7 +12,7 @@
         </div>
         <div id="menu">
             <div class="contacts">Contacts</div>
-            <div ng-repeat="x in allUser">
+            <div ng-repeat="x in allUser" ng-click=person(x)>
                 <div class="displayname">
                     {{x.firstname}}
                 </div>

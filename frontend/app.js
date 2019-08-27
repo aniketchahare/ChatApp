@@ -25,14 +25,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'forgotController'
             })
 
-
         .state('reset',
             {
                 url: '/reset/:token',
                 templateUrl: 'templates/reset.html',
                 controller: 'resetController'
             })
-
 
         .state('chatBox',
             {

@@ -16,8 +16,8 @@ app.service("loginServices", function ($http, $location, SocketService) {
                     localStorage.setItem('lastname', response.data.result.data.lastname);
                     localStorage.setItem('mobileno', response.data.result.data.mobileno);
                     localStorage.setItem('emailid', response.data.result.data.emailid);
-                    // localStorage.setItem('password', response.data.result.data.password);
                     localStorage.setItem('token', response.data.result.token.token);
+
                     $location.path('/chatBox')
                     $scope.login = function () {
                         alert("Login successfull")

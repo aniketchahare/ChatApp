@@ -1,21 +1,18 @@
-div#page
-{
-    border:1px solid purple;
-    width:1298px;
-    margin:0 auto;
-    padding:-60px;
-    text-align:center;
-    position:absolute;
+div#page {
+    border: 1px solid purple;
+    width: 1298px;
+    margin: 0 auto;
+    padding: -60px;
+    text-align: center;
+    position: absolute;
     background-color: darkgray;
 }
 
-div
-{
-    text-align:center;
+div {
+    text-align: center;
 }
 
-div#header 
-{
+div#header {
     border: 1px solid red;
     font-size: 40px;
     width: 1286px;
@@ -25,32 +22,28 @@ div#header
     top: 6px;
 }
 
-.buttonlogout
-{
+.buttonlogout {
     float: right;
 }
 
-div#menu
-{
-    border:1px solid green;
-    width:254px;
+div#menu {
+    border: 1px solid green;
+    width: 254px;
     font-size: 28px;
-    float:left;
-    margin:10px 0 10px 5px;
-    height:500px;
+    float: left;
+    margin: 10px 0 10px 5px;
+    height: 500px;
 }
 
-.buttonlogout
-{
+.buttonlogout {
     top: 100px;
 }
 
-.displayname
-{
+.displayname {
     font-size: 90%
 }
 
-#main-div{
+#main-div {
     width: 1018px;
     border: 1px solid black;
     height: 499px;
@@ -58,26 +51,24 @@ div#menu
     margin-top: 11px
 }
 
-#text-area
-{
+#text-area {
     width: 90%;
     margin-left: -8%;
     position: relative;
     top: 27px;
 }
-#message-display{
+
+#message-display {
     width: 100%;
     height: 432px;
     overflow: visible;
 }
 
-#button-send
-{
+#button-send {
     position: relative;
     left: 463px;
 }
 
-.contacts
-{
+.contacts {
     font-size: 147%;
 }
