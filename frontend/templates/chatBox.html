@@ -1,40 +1,42 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat App</title>
 </head>
-<link rel="stylesheet" href="../css/chatBox.css" type="text/css">
 
-<body ng-app="chatApplication">
+<body ng-app="chatApplication" ng-controller="chatController">
     <div id="page">
         <div id="header">
             Chat Box
             <button ui-sref="logout" ng-click="logout()" class="buttonlogout">log out</button>
         </div>
         <div id="menu">
-            <div> user</div>
-            <!-- <div ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName!=x.firstname">
-                    <li>
-                        <div>
-                            {{x.firstname}}
-                        </div>
-                    </li>
-            </div> -->
-            <div id="content"></div>
+            <div class="contacts">Contacts</div>
+            <div ng-repeat="x in allUser">
+                <div class="displayname">
+                    {{x.firstname}}
+                </div>
+            </div>
+        </div>
+        <div id="main-div">
+            <div id="message-display">
+
+            </div>
             <div>
-                <form class="form-field">
-                    <div class="row">
-                        <div class="column">
-                            <textarea placeholder="Start conversation.." name="msg" required></textarea>
+                <form>
+                    <div>
+                        <div>
+                            <textarea placeholder="Start conversation.." id="text-area" name="msg" required></textarea>
                         </div>
-                        <div class="column">
-                            <button type="submit" ng-click="send()" class="buttonsend">Send</button>
+                        <div>
+                            <button type="submit" ng-click="send()" id="button-send">Send</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
+
 </body>
 
 </html>

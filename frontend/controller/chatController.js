@@ -1,4 +1,4 @@
-app.controller("chatController", function ($scope, chatServices, SocketService) {
+app.controller("chatController", function ($scope, SocketService, $state, $location, chatService) {
     console.log("chat controller called...");
 
 
@@ -10,23 +10,25 @@ app.controller("chatController", function ($scope, chatServices, SocketService) 
     $scope.lastname = localStorage.getItem('lastname');
     $scope.mobileno = localStorage.getItem('mobileno');
     $scope.emailid = localStorage.getItem('emailid');
-    $scope.password = localStorage.getItem('password');
     $scope.token = localStorage.getItem('token')
+    console.log(" token ======= ", $scope.token);
 
-    try {
-        SocketService.on($scope.password, (message) => {
-            //listening to the evnts
-            console.log(" new Message generated--> ", message);
-            $scope.allMessage.push(message);
-            /// console.log("arr", $scope.allMessageArr); 
-        });
-    } catch (error) {
-        console.log("error in searching messages....")
-    }
+
+    // try {
+    //     SocketService.on($scope.password, (message) => {
+    //         //listening to the evnts
+    //         console.log(" new Message generated--> ", message);
+    //         $scope.allMessage.push(message);
+    //         /// console.log("arr", $scope.allMessageArr); 
+    //     });
+    // } catch (error) {
+    //     console.log("error in searching messages....")
+    // }
 
     $scope.allUser = function () {
-        console.log("get all users token inside " + token);
-        chatService.displayChatServiceUser(token, $scope);
+        // console.log("get all users token inside " + token);
+        chatService.allUser($scope);
+        // chatServices.
     }
     $scope.allUser();
 

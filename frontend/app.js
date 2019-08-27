@@ -7,39 +7,41 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/register',
             templateUrl: 'templates/register.html',
             controller: 'registerController'
-        });
+        })
+
+
+        .state('login',
+            {
+                url: '/login',
+                templateUrl: 'templates/login.html',
+                controller: 'loginController'
+            })
+
+
+        .state('forgot',
+            {
+                url: '/forgot',
+                templateUrl: 'templates/forgot.html',
+                controller: 'forgotController'
+            })
+
+
+        .state('reset',
+            {
+                url: '/reset/:token',
+                templateUrl: 'templates/reset.html',
+                controller: 'resetController'
+            })
+
+
+        .state('chatBox',
+            {
+                url: '/chatBox',
+                templateUrl: 'templates/chatBox.html',
+                controller: 'chatController'
+            });
+
     $urlRouterProvider.otherwise('/login');
-
-    $stateProvider.state('login',
-        {
-            url: '/login',
-            templateUrl: 'templates/login.html',
-            controller: 'loginController'
-        });
-    $urlRouterProvider.otherwise('/login');
-
-    $stateProvider.state('forgot',
-        {
-            url: '/forgot',
-            templateUrl: 'templates/forgot.html',
-            controller: 'forgotController'
-        });
-    $urlRouterProvider.otherwise('/reset');
-
-    $stateProvider.state('reset',
-        {
-            url: '/reset/:token',
-            templateUrl: 'templates/reset.html',
-            controller: 'resetController'
-        });
-    $urlRouterProvider.otherwise('/login');
-
-    $stateProvider.state('chatBox',
-        {
-            url: '/chatBox',
-            templateUrl: 'templates/chatBox.html',
-            controller: 'chatController'
-        });
 });
 
 app.service('SocketService', ['socketFactory', function SocketService(socketFactory) {
