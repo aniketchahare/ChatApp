@@ -1,5 +1,5 @@
-app.service("chatService", function($http, $location) {
-    this.allUser = function($scope) {
+app.service("chatService", function ($http, $location) {
+    this.allUser = function ($scope) {
         data = localStorage.getItem('token')
         $http({
             method: 'GET',
@@ -9,19 +9,23 @@ app.service("chatService", function($http, $location) {
                 token: data
             }
         }).then(
-            function(response) {
+            function (response) {
                 var getuser = [];
                 console.log("chatServices here--> ", response.data);
 
                 $scope.allUser = response.data.result.data;
 
+                $scope.currentUser = $scope.emailid;
+
                 console.log("all users display--> ", $scope.allUser)
-            }).catch(function(error) {
-            console.log("chatServices failed..", error)
-        });
+            }).catch(function (error) {
+                console.log("chatServices failed..", error)
+            });
     }
 
-    this.person = function($scope, receiver) {
+    this.getReceiverMessage = function ($scope,token) {
+        var array = []
+        data = localStorage.getItem('token')
         $http({
             method: 'GET',
             url: 'http://localhost:3000/getAllChat',
@@ -30,16 +34,24 @@ app.service("chatService", function($http, $location) {
                 token: data
             }
         }).then(
-            function(response) {
-                var allChat = [];
-                console.log("all chat display--> ", response.data.result.data);
+            function (response) {
+                console.log("length-->  ",response.data.result.data.length)
+                
+                for (var i = 0; i < (response.data.result.data.length); i++) {
 
-                $scope.allChat = response.data.result.data;
-                console.log("get all chats in allChat--> ",$scope.allChat);
+                    var list = response.data.result.data[i];
+                    console.log(list);
 
-                // if($scope.emailid == allChat. && receiver == allChat.emailid);
-            }).catch(function(error) {
-            console.log("there is some errors in /getAllChat")
-        });
+                    if ((localStorage.getItem('_id') === list.senderid) && (localStorage.getItem('receiverid') == list.receiverid)) {
+                        array.push(list);
+                        $scope.getallMessages = array;
+                    }
+                }
+
+                console.log("Array display",array)
+                console.log("get All Messages display--> ",$scope.getallMessages);
+            }).catch(function (error) {
+                console.log("there is some errors in /getAllChat")
+            });
     }
 });

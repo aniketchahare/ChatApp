@@ -13,7 +13,6 @@ app.service("registerServices", function ($http, $location) {
                     $scope.register = function () {
                         alert("Registration done Successfully...")
                     }
-                    $location.path('/#/register');
                     $location.path('/#/login');
                 }).catch(function (error) {
                     $scope.register = function () {

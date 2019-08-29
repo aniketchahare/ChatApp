@@ -10,9 +10,11 @@ module.exports =
             
             var userData =
             {
-                sendername : req.body.sendername,
-                receivername : req.body.receivername,
-                message : req.body.message
+                senderid : req.senderid,
+                sendername : req.sendername,
+                receiverid : req.receiverid,
+                receivername : req.receivername,
+                message : req.message
             }
             console.log('user data in ctrl', userData);
 
@@ -22,13 +24,13 @@ module.exports =
                 {
                     response.success = false;
                     response.error = err;
-                    return res.status(400).send(response);
+                    // return res.status(400).send(response);
                 }
                 else
                 {
                     response.success = true;
                     response.result = data;
-                    return res.status(200).send(response);
+                    // return res.status(200).send(response);
                 }
             });
         }

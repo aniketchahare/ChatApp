@@ -6,7 +6,8 @@ app.controller('resetController', function($scope,resetServices)
     {
         var resetUser =
         {
-            'password': $scope.password
+            'password': $scope.password,
+            'token': $scope.token
         }
 
         console.log("reset details in controller--> ",resetUser);

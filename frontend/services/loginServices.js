@@ -13,8 +13,6 @@ app.service("loginServices", function ($http, $location, SocketService) {
 
                     localStorage.setItem('_id', response.data.result.data._id);
                     localStorage.setItem('firstname', response.data.result.data.firstname);
-                    localStorage.setItem('lastname', response.data.result.data.lastname);
-                    localStorage.setItem('mobileno', response.data.result.data.mobileno);
                     localStorage.setItem('emailid', response.data.result.data.emailid);
                     localStorage.setItem('token', response.data.result.token.token);
 

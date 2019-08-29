@@ -1,45 +1,86 @@
-app.controller("chatController", function($scope, SocketService, $state, $location, chatService) {
+app.controller("chatController", function ($scope, SocketService, $location, chatService) {
     console.log("chat controller called...");
 
-
-    $scope.message = '';
-    $scope.allMessage = [];
+    $scope.allMessage = '';
+    $scope.getallMessages = [];
 
     $scope._id = localStorage.getItem('_id');
     $scope.firstname = localStorage.getItem('firstname');
-    $scope.lastname = localStorage.getItem('lastname');
-    $scope.mobileno = localStorage.getItem('mobileno');
     $scope.emailid = localStorage.getItem('emailid');
-    $scope.password = localStorage.getItem('password');
-    $scope.token = localStorage.getItem('token')
-    console.log(" token ======= ", $scope.token);
+    var token = $scope.token = localStorage.getItem('token')
+    console.log(" token ======= ", token);
 
+    try {
+        SocketService.on($scope.firstname, (message) => {
+            console.log("asdasdd")
+            console.log(" New Message ", message);
+            if (localStorage.getItem('_id') == message.senderid || localStorage.getItem('receiverid') == message.receiverid || localStorage.getItem('firstname') == message.sendername || localStorage.getItem('receiverfirstname') == message.receivername) {
+                if ($scope.getallMessages === undefined) {
+                    $scope.getallMessages = message;//assighning message to variable
+                }
+                else {
+                    $scope.getallMessages.push(message);
+                }
+            }
+        })
+    }
+    catch (err) {
+        console.log("Error in displaying messages")
+    }
 
-    // try {
-    //     SocketService.on($scope.password, (message) => {
-    //         //listening to the evnts
-    //         console.log(" new Message generated--> ", message);
-    //         $scope.allMessage.push(message);
-    //         /// console.log("arr", $scope.allMessageArr); 
-    //     });
-    // } catch (error) {
-    //     console.log("error in searching messages....")
-    // }
-
-    $scope.allUser = function() {
+    $scope.allUser = function () {
         // console.log("get all users token inside " + token);
         chatService.allUser($scope);
         // chatServices.
     }
     $scope.allUser();
 
-    $scope.person = function(receiver) {
-        console.log("user--> ",receiver,"emailid of sender",$scope.emailid);
-        chatService.person($scope.emailid, receiver);
+    //select user from list
+    $scope.person = function (receiver) {
+        console.log("user--> ", receiver, "emailid of sender", $scope.emailid);
+
+        $scope.getallMessages = '';
+
+        localStorage.setItem('receiverfirstname', receiver.firstname);
+        localStorage.setItem('receiverid', receiver._id);
+
+        $scope.receiverName = localStorage.getItem('receiverfirstname');
+        $scope.getReceiverMessage();
+    }
+
+    //get all message
+    $scope.getReceiverMessage = function () {
+        console.log(" getreceivermessage called");
+        chatService.getReceiverMessage($scope, token);
+    }
+
+    //sending new message
+    try {
+        $scope.send = function () {
+            var senderId = localStorage.getItem('_id');
+            var senderName = localStorage.getItem('firstname');
+            var receiverId = localStorage.getItem('receiverid')
+            var receiverName = localStorage.getItem('receiverfirstname');
+            var msg = {
+                'senderid': senderId,
+                'sendername': senderName,
+                'receiverid': receiverId,
+                'receivername': receiverName,
+                'message': $scope.message
+            };
+
+            console.log("message display with details--> ", msg)
+            SocketService.emit('new message', msg);
+            $scope.message = '';
+            alert("Message send successfully...");
+        }
+    }
+    catch (err) {
+        console.log("Error in sending message");
     }
 
     try {
-        $scope.logout = function() {
+        $scope.logout = function () {
             localStorage.clear();
             $location.path('/login')
         }

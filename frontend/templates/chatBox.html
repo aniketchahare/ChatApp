@@ -12,7 +12,7 @@
         </div>
         <div id="menu">
             <div class="contacts">Contacts</div>
-            <div ng-repeat="x in allUser" ng-click=person(x)>
+            <div ng-repeat="x in allUser" ng-click=person(x) ng-show="currentUser!=x.emailid">
                 <div class="displayname">
                     {{x.firstname}}
                 </div>
@@ -20,13 +20,17 @@
         </div>
         <div id="main-div">
             <div id="message-display">
-
+                <div ng-repeat="y in getallMessages">
+                    <div>
+                        <span><strong>{{y.sendername}}:</strong>{{y.message}}</span>
+                    </div>
+                </div>
             </div>
             <div>
                 <form>
                     <div>
                         <div>
-                            <textarea placeholder="Start conversation.." id="text-area" name="msg" required></textarea>
+                            <textarea placeholder="Start conversation.." id="text-area" ng-model="message" required></textarea>
                         </div>
                         <div>
                             <button type="submit" ng-click="send()" id="button-send">Send</button>
