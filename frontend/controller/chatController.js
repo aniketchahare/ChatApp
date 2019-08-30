@@ -10,23 +10,6 @@ app.controller("chatController", function ($scope, SocketService, $location, cha
     var token = $scope.token = localStorage.getItem('token')
     console.log(" token ======= ", token);
 
-    try {
-        SocketService.on($scope.firstname, (message) => {
-            console.log("asdasdd")
-            console.log(" New Message ", message);
-            if (localStorage.getItem('_id') == message.senderid || localStorage.getItem('receiverid') == message.receiverid || localStorage.getItem('firstname') == message.sendername || localStorage.getItem('receiverfirstname') == message.receivername) {
-                if ($scope.getallMessages === undefined) {
-                    $scope.getallMessages = message;//assighning message to variable
-                }
-                else {
-                    $scope.getallMessages.push(message);
-                }
-            }
-        })
-    }
-    catch (err) {
-        console.log("Error in displaying messages")
-    }
 
     $scope.allUser = function () {
         // console.log("get all users token inside " + token);
@@ -77,6 +60,24 @@ app.controller("chatController", function ($scope, SocketService, $location, cha
     }
     catch (err) {
         console.log("Error in sending message");
+    }
+
+    try {
+        SocketService.on($scope.firstname, (message) => {
+            console.log("asdasdd")
+            console.log(" New Message ", message);
+            if (localStorage.getItem('_id') == message.senderid || localStorage.getItem('receiverid') == message.receiverid || localStorage.getItem('firstname') == message.sendername || localStorage.getItem('receiverfirstname') == message.receivername) {
+                if ($scope.getallMessages === undefined) {
+                    $scope.getallMessages = message;//assighning message to variable
+                }
+                else {
+                    $scope.getallMessages.push(message);
+                }
+            }
+        })
+    }
+    catch (err) {
+        console.log("Error in displaying messages")
     }
 
     try {

@@ -42,7 +42,7 @@ app.service("chatService", function ($http, $location) {
                     var list = response.data.result.data[i];
                     console.log(list);
 
-                    if ((localStorage.getItem('_id') === list.senderid) && (localStorage.getItem('receiverid') == list.receiverid)) {
+                    if (((localStorage.getItem('_id') === list.senderid) && (localStorage.getItem('receiverid') == list.receiverid))  ||  ((localStorage.getItem('_id') === list.receiverid) && (localStorage.getItem('receiverid') === list.senderid))) {
                         array.push(list);
                         $scope.getallMessages = array;
                     }

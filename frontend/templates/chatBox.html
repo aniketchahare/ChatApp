@@ -7,15 +7,15 @@
 <body ng-app="chatApplication" ng-controller="chatController">
     <div id="page">
         <div id="header">
-            Chat Box
+            Welcome to Chat Box {{firstname}}
             <button ui-sref="logout" ng-click="logout()" class="buttonlogout">log out</button>
         </div>
         <div id="menu">
             <div class="contacts">Contacts</div>
             <div ng-repeat="x in allUser" ng-click=person(x) ng-show="currentUser!=x.emailid">
-                <div class="displayname">
+                <button class="displayname">
                     {{x.firstname}}
-                </div>
+                </button>
             </div>
         </div>
         <div id="main-div">
