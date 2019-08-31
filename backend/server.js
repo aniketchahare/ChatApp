@@ -20,7 +20,7 @@ var bodyParser = require("body-parser");
 var route = require('./routes/routes');
 
 app.use(express.static('../frontend'));
-//Create express app 
+//Create express app
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());

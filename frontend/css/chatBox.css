@@ -1,11 +1,11 @@
 div#page {
-    border: 1px solid purple;
+    border: 1px solid rgb(95, 162, 201);
     width: 1298px;
     margin: 0 auto;
     padding: -60px;
     text-align: center;
     position: absolute;
-    background-color: darkgray;
+    background-color: rgb(94, 156, 185);
 }
 
 div {
@@ -41,7 +41,7 @@ div#menu {
 
 .displayname {
     font-size: 88%;
-    background-color: darkgray;
+    background-color:  rgb(94, 156, 185);
     color : black;
     border: 2px solid #e7e7e7; 
 
@@ -52,14 +52,14 @@ div#menu {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 4px 2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
-.displayname:hover {background-color: #e7e7e7;}
+.displayname:hover {background-color: rgb(94, 156, 185);}
 
 #main-div {
     width: 1018px;
