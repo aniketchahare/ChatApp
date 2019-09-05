@@ -55,7 +55,7 @@ app.controller("chatController", function ($scope, SocketService, $location, cha
             console.log("message display with details--> ", msg)
             SocketService.emit('new message', msg);
             $scope.message = '';
-            alert("Message send successfully...");
+            // alert("Message send successfully...");
         }
     }
     catch (err) {
@@ -64,7 +64,6 @@ app.controller("chatController", function ($scope, SocketService, $location, cha
 
     try {
         SocketService.on($scope.firstname, (message) => {
-            console.log("asdasdd")
             console.log(" New Message ", message);
             if (localStorage.getItem('_id') == message.senderid || localStorage.getItem('receiverid') == message.receiverid || localStorage.getItem('firstname') == message.sendername || localStorage.getItem('receiverfirstname') == message.receivername) {
                 if ($scope.getallMessages === undefined) {
